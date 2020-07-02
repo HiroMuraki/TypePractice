@@ -1,0 +1,56 @@
+﻿<Window x:Class="Type_Practice2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Type_Practice2" 
+        WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True"
+        mc:Ignorable="d" KeyDown="Window_KeyDown" MouseWheel="Window_MouseWheel"
+        Title="MainWindow" Height="150" Width="670" WindowStartupLocation="CenterScreen">
+    <Border Background="#fafafa" CornerRadius="15"  MouseLeftButtonDown="Window_Move">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="10,5,15,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <UniformGrid Rows="2" Columns="2" Width="90" Height="90" Grid.Column="0">
+                    <ToggleButton x:Name="toggleUpperAlpha" Content="A" Style="{StaticResource ToggleTypeSetter}"/>
+                    <ToggleButton x:Name="toggleLowerAlpha" Content="a" Style="{StaticResource ToggleTypeSetter}"/>
+                    <ToggleButton x:Name="toggleDigits" Content="0" Style="{StaticResource ToggleTypeSetter}"/>
+                    <ToggleButton x:Name="toggleSymbols" Content="#" Style="{StaticResource ToggleTypeSetter}"/>
+                </UniformGrid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="txtPracticeString" Style="{StaticResource ResourceKey=TextPresent}" Opacity="0.5"
+                             IsHitTestVisible="False" IsReadOnly="True" Foreground="{StaticResource ColorTextBackground}"/>
+                    <TextBox x:Name="txtInputString" Style="{StaticResource ResourceKey=TextPresent}"
+                             TextChanged="txtInputString_TextChanged"/>
+                    <Slider x:Name="sliderPracticeLength" ValueChanged="sliderPracticeLength_ValueChanged"
+                        Maximum="50" Minimum="0" Grid.Row="1" VerticalAlignment="Center" TickPlacement="Both"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Border x:Name="lblColorIndicator" Grid.Column="0" Background="#15b979" CornerRadius="0,0,0,15">
+                    <Label x:Name="lblPracticeLength" Style="{StaticResource GeneralLabel}" Content="0"
+                           Foreground="#fafafa"/>
+                </Border>
+                <Label x:Name="lblStarsLevel" Grid.Column="1" Style="{StaticResource GeneralLabel}"/>
+                <Label x:Name="lblTimeUsing"  Grid.Column="2" Style="{StaticResource GeneralLabel}" Content="0"/>
+                
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
