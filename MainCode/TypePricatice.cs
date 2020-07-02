@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using static System.Console;
 
-namespace Type_Practice2 {
+namespace TypePracticeLite {
     public static class TypePricatice {
         static readonly string[] UpperAlpha = new string[26] {
             "A","B","C","D","E","F","G",
@@ -113,16 +113,17 @@ namespace Type_Practice2 {
             }
             return (double)r / src.Length;
         }
-        public static int JudgeScores(bool?[] PType, int StrLen, int TimeUsing, double CorrectRatio) {
+        public static int JudgeScores(bool?[] practiceType, int StrLen, int timeUsing, double correctRatio) {
+            timeUsing = timeUsing > 0 ? timeUsing : 1;
             int level = 5;
-            foreach (bool? set in PType) {
+            foreach (bool? set in practiceType) {
                 if (set == true) {
                     --level;
                 }
             }
             double PLN = StrLen * 2;
-            double PTM = (StrLen / TimeUsing) / (double)level;
-            return (int)((PLN > 100 ? 100 : PLN) * (PTM > 1 ? 1 : PTM) * CorrectRatio);
+            double PTM = (StrLen / timeUsing) / (double)level;
+            return (int)((PLN > 100 ? 100 : PLN) * (PTM > 1 ? 1 : PTM) * correctRatio);
         }
         public static string GetStars(int Scores) {
             string stars = "";

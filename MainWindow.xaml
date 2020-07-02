@@ -1,9 +1,9 @@
-﻿<Window x:Class="Type_Practice2.MainWindow"
+﻿<Window x:Class="TypePracticeLite.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Type_Practice2" 
+        xmlns:local="clr-namespace:TypePracticeLite" 
         WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True"
         mc:Ignorable="d" KeyDown="Window_KeyDown" MouseWheel="Window_MouseWheel"
         Title="MainWindow" Height="150" Width="670" WindowStartupLocation="CenterScreen">

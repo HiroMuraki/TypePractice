@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace Type_Practice2 {
+namespace TypePracticeLite {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
@@ -98,7 +98,7 @@ namespace Type_Practice2 {
                 this.lblColorIndicator.Background = colorTyping;
                 timer.Start();
             }
-            if (practiceString.Length == inputString.Length) {
+            if (practiceString.Length == inputString.Length && practiceLength > 0) {
                 timer.Stop();
                 this.lblColorIndicator.Background = colorTypeStatic;
                 string stars = TypePricatice.GetStars(typeSettings, practiceString, inputString, timerCount);
@@ -136,7 +136,7 @@ namespace Type_Practice2 {
         private void Window_MouseWheel(object sender, MouseWheelEventArgs e) {
             if (e.Delta > 0) {
                 practiceLength += 1;
-            }else if (e.Delta < 0) {
+            } else if (e.Delta < 0) {
                 practiceLength -= 1;
             }
         }
