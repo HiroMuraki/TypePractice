@@ -3,6 +3,10 @@
                     xmlns:local="clr-namespace:TypePracticeLite">
     <SolidColorBrush x:Key="ColorTextBackground" Color="#FF505050"/>
     <SolidColorBrush x:Key="ColorTextForeground" Color="#FF000000"/>
+    <SolidColorBrush x:Key="ColorAccent" Color="#f9c53a"/>
+    <SolidColorBrush x:Key="ColorLightWhite" Color="#fafafa"/>
+    <SolidColorBrush x:Key="ColorMediumWhite" Color="#f0f0f0"/>
+    <SolidColorBrush x:Key="ColorLightBlack" Color="#505050"/>
     <Style x:Key="ToggleTypeSetter" TargetType="ToggleButton">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#A0A0A0"/>

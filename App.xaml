@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/TypePracticeLite;component/Styles/GeneralStyle.xaml"/>
+                <ResourceDictionary Source="/TypePracticeLite;component/Styles/GeneralSliderBar.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
