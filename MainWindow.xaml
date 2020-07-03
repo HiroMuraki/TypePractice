@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:TypePracticeLite" 
         WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True"
         mc:Ignorable="d" KeyDown="Window_KeyDown" MouseWheel="Window_MouseWheel"
-        Title="MainWindow" Height="150" Width="670" WindowStartupLocation="CenterScreen">
-    <Border Background="#fafafa" CornerRadius="15"  MouseLeftButtonDown="Window_Move">
+        Title="MainWindow" Height="160" Width="680" WindowStartupLocation="CenterScreen">
+    <Border Background="#fafafa" CornerRadius="15"  MouseLeftButtonDown="Window_Move"
+            BorderThickness="2" BorderBrush="{StaticResource ColorAccent}" Margin="5">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="5" ShadowDepth="5" Opacity="0.1"/>
+        </Border.Effect>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -34,7 +38,8 @@
                     <TextBox x:Name="txtInputString" Style="{StaticResource ResourceKey=TextPresent}"
                              TextChanged="txtInputString_TextChanged"/>
                     <Slider x:Name="sliderPracticeLength" ValueChanged="sliderPracticeLength_ValueChanged"
-                        Maximum="50" Minimum="0" Grid.Row="1" VerticalAlignment="Center" TickPlacement="Both"/>
+                            Maximum="50" Minimum="0" Grid.Row="1" VerticalAlignment="Center"
+                            Style="{StaticResource GeneralSlider}"/>
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
@@ -43,7 +48,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
-                <Border x:Name="lblColorIndicator" Grid.Column="0" Background="#15b979" CornerRadius="0,0,0,15">
+                <Border x:Name="lblColorIndicator" Grid.Column="0" Background="#15b979" CornerRadius="0,15,0,15">
                     <Label x:Name="lblPracticeLength" Style="{StaticResource GeneralLabel}" Content="0"
                            Foreground="#fafafa"/>
                 </Border>
