@@ -88,6 +88,7 @@ namespace TypePracticeLite {
             InitializeComponent();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += new EventHandler(Timer_Tick);
+            this.practiceLength = 50;
         }
         private void sliderPracticeLength_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
             this.lblPracticeLength.Content = practiceLength.ToString();

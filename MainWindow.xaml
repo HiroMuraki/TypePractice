@@ -17,7 +17,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="10,5,15,0">
+            <Grid Grid.Row="0" Margin="5,5,15,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
@@ -30,8 +30,8 @@
                 </UniformGrid>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <TextBox x:Name="txtPracticeString" Style="{StaticResource ResourceKey=TextPresent}" Opacity="0.5"
                              IsHitTestVisible="False" IsReadOnly="True" Foreground="{StaticResource ColorTextBackground}"/>
