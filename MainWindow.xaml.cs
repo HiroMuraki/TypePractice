@@ -99,8 +99,9 @@ namespace TypePracticeLite {
                 this.lblColorIndicator.Background = colorTyping;
                 timer.Start();
             }
-            if (practiceString.Length == inputString.Length && practiceLength > 0) {
+            if (inputString.Length >= practiceString.Length && practiceLength > 0) {
                 timer.Stop();
+                this.txtInputString.IsReadOnly = true;
                 this.lblColorIndicator.Background = colorTypeStatic;
                 string stars = TypePricatice.GetStars(typeSettings, practiceString, inputString, timerCount);
                 this.lblStarsLevel.Content = stars;
@@ -171,6 +172,7 @@ namespace TypePracticeLite {
             timer.Stop();
             timerCount = 0;
             this.lblTimeUsing.Content = 0;
+            this.txtInputString.IsReadOnly = false;
             this.txtInputString.Text = "";
             this.lblStarsLevel.Content = "";
             this.lblColorIndicator.Background = colorTypeReady;
