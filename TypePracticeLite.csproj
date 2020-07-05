@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\ICOTP.ico</ApplicationIcon>
+    <ApplicationIcon>ICO2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MainCode\ResDict.cs" />
     <Compile Include="MainCode\TypePricatice.cs" />
     <Page Include="Styles\GeneralSliderBar.xaml">
       <SubType>Designer</SubType>
@@ -80,6 +81,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Styles\HOSStyleGeneral.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\HOSStyleSliderBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\PreSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -109,6 +122,37 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\ICOTP.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO.ico" />
+    <Resource Include="Resources\ICO.png" />
+    <Resource Include="Resources\IndicatorFocus.png" />
+    <Resource Include="Resources\IndicatorNormal.png" />
+    <Resource Include="Resources\IndicatorRandom.png" />
+    <Resource Include="Resources\IndicatorStatic.png" />
+    <Resource Include="Resources\MainBorder.png" />
+    <Resource Include="Resources\MainBorder2.png" />
+    <Resource Include="Resources\SeekBarSlider.png" />
+    <Resource Include="Resources\SeekBarThumb.png" />
+    <Resource Include="Resources\StarA.png" />
+    <Resource Include="Resources\StarA_1.png" />
+    <Resource Include="Resources\StarB.png" />
+    <Resource Include="Resources\StarB_2.png" />
+    <Resource Include="Resources\ToggleFocus.png" />
+    <Resource Include="Resources\ToggleLock.png" />
+    <Resource Include="Resources\ToggleNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SeekBarThumbFocus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IndicatorBlank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICO2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

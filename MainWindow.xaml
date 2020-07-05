@@ -6,55 +6,56 @@
         xmlns:local="clr-namespace:TypePracticeLite" FocusManager.FocusedElement="{Binding ElementName=txtInputString}"
         WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True"
         mc:Ignorable="d" KeyDown="Window_KeyDown" MouseWheel="Window_MouseWheel"
-        Title="MainWindow" Height="160" Width="680" WindowStartupLocation="CenterScreen">
-    <Border Background="#fafafa" CornerRadius="15"  MouseLeftButtonDown="Window_Move"
-            BorderThickness="2" BorderBrush="{StaticResource ColorAccent}" Margin="5">
-        <Border.Effect>
-            <DropShadowEffect BlurRadius="5" ShadowDepth="5" Opacity="0.1"/>
-        </Border.Effect>
-        <Grid>
+        Title="MainWindow" Height="568" Width="715" WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="15"  MouseLeftButtonDown="Window_Move" BorderBrush="{StaticResource ColorAccent}"
+            Background="{StaticResource MainBorder2}">
+        <Grid  Margin="50,20,50,0">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1.25*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="5,5,15,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <UniformGrid Rows="2" Columns="2" Width="90" Height="90" Grid.Column="0">
-                    <ToggleButton x:Name="toggleUpperAlpha" Content="A" Style="{StaticResource ToggleTypeSetter}"/>
-                    <ToggleButton x:Name="toggleLowerAlpha" Content="a" Style="{StaticResource ToggleTypeSetter}"/>
-                    <ToggleButton x:Name="toggleDigits" Content="0" Style="{StaticResource ToggleTypeSetter}"/>
-                    <ToggleButton x:Name="toggleSymbols" Content="#" Style="{StaticResource ToggleTypeSetter}"/>
-                </UniformGrid>
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1.5*"/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
-                    <TextBox x:Name="txtPracticeString" Style="{StaticResource ResourceKey=TextPresent}" Opacity="0.5"
-                             IsHitTestVisible="False" IsReadOnly="True" Foreground="{StaticResource ColorTextBackground}"/>
-                    <TextBox x:Name="txtInputString" Style="{StaticResource ResourceKey=TextPresent}"
-                             TextChanged="txtInputString_TextChanged"/>
-                    <Slider x:Name="sliderPracticeLength" ValueChanged="sliderPracticeLength_ValueChanged"
-                            Maximum="50" Minimum="0" Grid.Row="1" VerticalAlignment="Center"
-                            Style="{StaticResource GeneralSlider}"/>
-                </Grid>
+            <Grid Grid.Row="0">
+                <Label x:Name="lblUsingTime" Style="{StaticResource GeneralLabel}" Content="test"
+                       HorizontalAlignment="Center"/>
             </Grid>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="100"/>
-                </Grid.ColumnDefinitions>
-                <Border x:Name="lblColorIndicator" Grid.Column="0" Background="#15b979" CornerRadius="0,15,0,15">
-                    <Label x:Name="lblPracticeLength" Style="{StaticResource GeneralLabel}" Content="0"
-                           Foreground="#fafafa"/>
-                </Border>
-                <Label x:Name="lblStarsLevel" Grid.Column="1" Style="{StaticResource GeneralLabel}"/>
-                <Label x:Name="lblTimeUsing"  Grid.Column="2" Style="{StaticResource GeneralLabel}" Content="0"/>
-                
+            <Grid Grid.Row="1" Margin="50,50,50,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBox x:Name="txtPracticeString" Style="{StaticResource ResourceKey=TextPresent}" Opacity="0.5"
+                             IsHitTestVisible="False" IsReadOnly="True" Foreground="{StaticResource ColorTextBackground}"
+                             Text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+                    <TextBox x:Name="txtInputString" Style="{StaticResource ResourceKey=TextPresent}"
+                             TextChanged="txtInputString_TextChanged" Foreground="#FF2C2926"/>
+                </Grid>
+                <Slider x:Name="sliderPracticeLength" ValueChanged="sliderPracticeLength_ValueChanged"
+                            Maximum="30" Minimum="0" Grid.Row="1" VerticalAlignment="Center" Margin="0,35"
+                            Style="{StaticResource HOSSliderBar}"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="lblStarsLevel" Grid.Row="0" Style="{StaticResource GeneralLabel}"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center"
+                            Margin="2,2,2,52">
+                    <ToggleButton x:Name="toggleUpperAlpha" Style="{StaticResource ButtonIndicatorBottom}"/>
+                    <ToggleButton x:Name="toggleLowerAlpha" Style="{StaticResource ButtonIndicatorBottom}"/>
+                    <ToggleButton x:Name="toggleDigits" Style="{StaticResource ButtonIndicatorBottom}"/>
+                    <ToggleButton x:Name="toggleSymbols" Style="{StaticResource ButtonIndicatorBottom}"/>
+                    <ToggleButton x:Name="lblStatusIndicator" Style="{StaticResource  ButtonIndicatorBottom}"
+                                  Foreground="#fafafa" Width="101" Height="101" IsChecked="False" IsHitTestVisible="False"/>
+                    <Grid>
+                        <Label x:Name="lblPracticeLength" Background="{StaticResource IndicatorStatic}"
+                               Width="101" Height="101" IsHitTestVisible="False"/>
+                        <Label x:Name="lblPracticeLengthCover" Background="{StaticResource IndicatorRandom}"
+                               Width="101" Height="101"  IsHitTestVisible="False" Opacity="0"/>
+                    </Grid>
+                </StackPanel>
             </Grid>
         </Grid>
     </Border>

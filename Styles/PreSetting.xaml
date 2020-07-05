@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TypePracticeLite">
+    <ImageBrush x:Key="IndicatorStatic" ImageSource="/TypePracticeLite;component/Resources/IndicatorStatic.png"/>
+    <ImageBrush x:Key="IndicatorNormal" ImageSource="/TypePracticeLite;component/Resources/IndicatorNormal.png"/>
+    <ImageBrush x:Key="IndicatorRandom" ImageSource="/TypePracticeLite;component/Resources/IndicatorRandom.png"/>
+    <ImageBrush x:Key="IndicatorFocus" ImageSource="/TypePracticeLite;component/Resources/IndicatorFocus.png"/>
+    <ImageBrush x:Key="IndicatorBlank" ImageSource="/TypePracticeLite;component/Resources/IndicatorBlank.png"/>
+    <ImageBrush x:Key="ToggleNormal" ImageSource="/TypePracticeLite;component/Resources/ToggleNormal.png"/>
+    <ImageBrush x:Key="ToggleLock" ImageSource="/TypePracticeLite;component/Resources/ToggleLock.png"/>
+    <ImageBrush x:Key="ToggleFocus" ImageSource="/TypePracticeLite;component/Resources/ToggleFocus.png"/>
+    <ImageBrush x:Key="MainBorder" ImageSource="/TypePracticeLite;component/Resources/MainBorder.png"/>
+    <ImageBrush x:Key="MainBorder2" ImageSource="/TypePracticeLite;component/Resources/MainBorder2.png"/>
+    <ImageBrush x:Key="SeekBarSlider" ImageSource="/TypePracticeLite;component/Resources/SeekBarSlider.png"/>
+    <ImageBrush x:Key="SeekBarThumb" ImageSource="/TypePracticeLite;component/Resources/SeekBarThumb.png"/>
+    <ImageBrush x:Key="SeekBarThumbFocus" ImageSource="/TypePracticeLite;component/Resources/SeekBarThumbFocus.png"/>
+    <Style x:Key="ImageStarA" TargetType="Image">
+        <Setter Property="Source" Value="/TypePracticeLite;component/Resources/StarA.png"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="2,0"/>
+    </Style>
+    <Style x:Key="ImageStarB" TargetType="Image">
+        <Setter Property="Source" Value="/TypePracticeLite;component/Resources/StarB.png"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="2,0"/>
+    </Style>
+</ResourceDictionary>

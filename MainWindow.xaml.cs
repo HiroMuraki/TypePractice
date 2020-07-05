@@ -91,18 +91,18 @@ namespace TypePracticeLite {
             this.practiceLength = 50;
         }
         private void sliderPracticeLength_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
-            this.lblPracticeLength.Content = practiceLength.ToString();
+            this.lblPracticeLengthCover.Opacity = practiceLength / this.sliderPracticeLength.Maximum;
             GeneralString();
         }
         private void txtInputString_TextChanged(object sender, TextChangedEventArgs e) {
             if (timer.IsEnabled == false) {
-                this.lblColorIndicator.Background = colorTyping;
+                this.lblStatusIndicator.IsChecked = true;
                 timer.Start();
             }
             if (inputString.Length >= practiceString.Length && practiceLength > 0) {
                 timer.Stop();
                 this.txtInputString.IsReadOnly = true;
-                this.lblColorIndicator.Background = colorTypeStatic;
+                this.lblStatusIndicator.IsChecked = false;
                 string stars = TypePricatice.GetStars(typeSettings, practiceString, inputString, timerCount);
                 this.lblStarsLevel.Content = stars;
                 timerCount = 0;
@@ -146,7 +146,7 @@ namespace TypePracticeLite {
 
     public partial class MainWindow : Window {
         private void Timer_Tick(object sender, EventArgs e) {
-            this.lblTimeUsing.Content = timerCount;
+            this.lblUsingTime.Content = timerCount;
             ++timerCount;
         }
         private void GeneralString() {
@@ -171,11 +171,11 @@ namespace TypePracticeLite {
         private void ResetStaticstic() {
             timer.Stop();
             timerCount = 0;
-            this.lblTimeUsing.Content = 0;
+            this.lblUsingTime.Content = 0;
             this.txtInputString.IsReadOnly = false;
+            this.lblStatusIndicator.IsChecked = false;
             this.txtInputString.Text = "";
             this.lblStarsLevel.Content = "";
-            this.lblColorIndicator.Background = colorTypeReady;
         }
     }
 }
